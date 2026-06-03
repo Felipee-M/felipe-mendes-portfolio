@@ -86,12 +86,21 @@ export default function Home() {
             </a>
 
             <a
-              href="https://github.com/SEU-USUARIO"
+              href="https://github.com/Felipee-M"
               target="_blank"
               rel="noreferrer"
               className="rounded-lg border border-slate-700 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-500"
             >
               Ver GitHub
+            </a>
+
+            <a
+              href="https://www.linkedin.com/in/felipemendessantos"
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-lg border border-slate-700 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-500"
+            >
+              Entrar em contato
             </a>
           </div>
         </div>

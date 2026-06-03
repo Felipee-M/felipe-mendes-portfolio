@@ -1,4 +1,11 @@
 import Link from "next/link";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Dashboard Comercial - Power BI",
+  description:
+    "Estudo de caso de dashboard comercial em Power BI com análise de faturamento, ticket médio, categorias e indicadores de vendas.",
+};
 
 export default function DashboardComercialPage() {
   return (
