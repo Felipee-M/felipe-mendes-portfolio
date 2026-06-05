@@ -23,4 +23,4 @@ Criar uma vitrine visual para apresentar projetos de Power BI, SQL, Excel e Pyth
 
 ## Deploy
 
-Em breve.details.
+[link na vercel](https://project-ltx9x.vercel.app/).
