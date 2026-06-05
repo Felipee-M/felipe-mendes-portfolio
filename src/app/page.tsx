@@ -1,28 +1,7 @@
 import Link from "next/link";
+import { projects } from "@/data/projects";
 
-const featuredProjects = [
-  {
-    title: "Dashboard Comercial - Power BI",
-    description:
-      "Dashboard para acompanhamento de faturamento, ticket médio, categorias, vendas por período e desempenho comercial.",
-    tools: ["Power BI", "Power Query", "DAX"],
-    href: "/projetos/dashboard-comercial",
-  },
-  {
-    title: "Análise de E-commerce - SQL",
-    description:
-      "Análise de pedidos, clientes, sellers, produtos, faturamento, entrega e cancelamentos usando SQL.",
-    tools: ["SQL", "PostgreSQL", "DBeaver"],
-    href: "#",
-  },
-  {
-    title: "Dashboard Financeiro - Excel",
-    description:
-      "Planilha/dashboard financeiro com indicadores, categorias, controle de despesas e visão mensal.",
-    tools: ["Excel", "VBA", "Dashboard"],
-    href: "#",
-  },
-];
+const featuredProjects = projects.filter((project) => project.featured);
 
 const tools = [
   "Power BI",
@@ -192,11 +171,44 @@ export default function Home() {
               key={project.title}
               className="rounded-2xl border border-slate-800 bg-slate-900 p-6"
             >
-              <h3 className="mb-3 text-xl font-semibold">{project.title}</h3>
+              <div className="mb-4 flex items-start justify-between gap-4">
+                <div>
+                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
+                    {project.category}
+                  </p>
+
+                  <h3 className="text-xl font-semibold">{project.title}</h3>
+                </div>
+
+                <span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
+                  {project.status === "published"
+                    ? "Publicado"
+                    : project.status === "in-progress"
+                      ? "Em andamento"
+                      : "Em breve"}
+                </span>
+              </div>
 
               <p className="mb-5 text-sm leading-6 text-slate-300">
                 {project.description}
               </p>
+
+              <div className="mb-5 space-y-3 text-sm leading-6 text-slate-300">
+                <p>
+                  <strong className="text-slate-100">Problema:</strong>{" "}
+                  {project.problem}
+                </p>
+
+                <p>
+                  <strong className="text-slate-100">Entrega:</strong>{" "}
+                  {project.solution}
+                </p>
+
+                <p>
+                  <strong className="text-slate-100">Impacto:</strong>{" "}
+                  {project.impact}
+                </p>
+              </div>
 
               <div className="mb-6 flex flex-wrap gap-2">
                 {project.tools.map((tool) => (
@@ -209,17 +221,17 @@ export default function Home() {
                 ))}
               </div>
 
-              {project.href === "#" ? (
-                <span className="text-sm font-semibold text-slate-500">
-                  Em breve
-                </span>
-              ) : (
+              {project.status === "published" ? (
                 <Link
-                  href={project.href}
+                  href={`/projetos/${project.slug}`}
                   className="text-sm font-semibold text-blue-400 hover:text-blue-300"
                 >
                   Ver estudo de caso →
                 </Link>
+              ) : (
+                <span className="text-sm font-semibold text-slate-500">
+                  {project.status === "in-progress" ? "Projeto em andamento" : "Em breve"}
+                </span>
               )}
             </article>
           ))}
@@ -259,7 +271,7 @@ export default function Home() {
             </a>
 
             <a
-              href="https://www.linkedin.com/in/SEU-LINKEDIN"
+              href="https://www.linkedin.com/in/felipemendessantos"
               target="_blank"
               rel="noreferrer"
               className="rounded-lg border border-slate-700 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-500"
