@@ -167,3 +167,78 @@ export const planilhaControleFinanceiroCase: ProjectCase = {
     },
   ],
 };
+
+export const ecommerceSqlCase: ProjectCase = {
+  title: "Análise de E-commerce com SQL",
+  label: "Estudo de caso",
+  description:
+    "Projeto de análise de dados de e-commerce utilizando SQL para explorar vendas, pedidos, clientes, categorias e indicadores comerciais.",
+  summary:
+    "Estudo prático com foco em consultas SQL para transformar dados brutos de e-commerce em métricas úteis para análise de desempenho comercial, comportamento de clientes e visão geral das vendas.",
+  context:
+    "Empresas de e-commerce geram grandes volumes de dados relacionados a pedidos, clientes, produtos, pagamentos e entregas. O objetivo deste projeto foi simular uma análise de negócio usando SQL para extrair informações relevantes desses dados.",
+  challenge:
+    "O desafio era organizar consultas capazes de responder perguntas importantes de negócio, como volume de pedidos, receita, desempenho por categoria, comportamento dos clientes e evolução das vendas.",
+  solution:
+    "Foram desenvolvidas consultas SQL para explorar a base de dados, realizar joins entre tabelas, criar agregações, calcular métricas comerciais e gerar análises que apoiam a interpretação dos resultados do e-commerce.",
+  tools: ["SQL", "PostgreSQL", "DBeaver", "Joins", "Agregações"],
+  indicators: [
+    "Total de pedidos",
+    "Receita analisada",
+    "Ticket médio",
+    "Pedidos por status",
+    "Vendas por categoria",
+    "Clientes por região",
+  ],
+  process: [
+    "Exploração inicial da estrutura da base de dados.",
+    "Identificação das principais tabelas do projeto.",
+    "Criação de consultas com filtros e ordenações.",
+    "Uso de joins para combinar informações de pedidos, clientes e produtos.",
+    "Criação de agregações para gerar indicadores comerciais.",
+    "Organização das queries para documentação no GitHub.",
+    "Interpretação dos resultados com foco em perguntas de negócio.",
+  ],
+  images: [
+    {
+      src: "/images/projects/ecommerce-sql-readme.png",
+      alt: "Documentação do sprint 4 do projeto de consultas no SQL",
+      title: "Documentação do sprint 4",
+    },
+    {
+      src: "/images/projects/ecommerce-sql-sprint4-1.png",
+      alt: "Consultas realizadas para conclusão do sprint 4",
+      title: "Consultas do sprint 4",
+    },
+    {
+      src: "/images/projects/ecommerce-sql-sprint4-2.png",
+      alt: "Consultas realizadas para conclusão do sprint 4",
+      title: "Consultas do sprint 4",
+    },
+    {
+      src: "/images/projects/ecommerce-sql-sprint4-34.png",
+      alt: "Consultas realizadas para conclusão do sprint 4",
+      title: "Consultas do sprint 4",
+    },
+  ],
+  impact: [
+    "Demonstra capacidade de extrair informações úteis a partir de dados relacionais.",
+    "Aplica conceitos fundamentais de SQL para análise de negócio.",
+    "Mostra domínio de joins, filtros, agrupamentos e métricas comerciais.",
+    "Fortalece o portfólio com um projeto diretamente relacionado a Dados e BI.",
+    "Serve como base para evoluir futuramente para dashboards em Power BI.",
+  ],
+  links: [
+    {
+      label: "Ver no GitHub",
+      href: "https://github.com/Felipee-M/data-analytics-portfolio",
+      external: true,
+      variant: "primary",
+    },
+    {
+      label: "Voltar aos projetos",
+      href: "/#projetos",
+      variant: "secondary",
+    },
+  ],
+};

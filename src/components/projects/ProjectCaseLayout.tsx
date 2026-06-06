@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { ProjectImageGallery } from "@/components/projects/ProjectImageGallery";
 import Link from "next/link";
 import type { ProjectCase } from "@/data/projectCases";
 
@@ -94,7 +94,7 @@ export function ProjectCaseLayout({ project }: ProjectCaseLayoutProps) {
           </ol>
         </section>
 
-        <ProjectImages images={project.images} />
+        <ProjectImageGallery images={project.images} />
 
         {project.video && (
           <section className="mb-12">
@@ -168,60 +168,6 @@ function InfoBlock({ title, text }: { title: string; text: string }) {
     </div>
   );
 }
-
-function ProjectImages({ images }: { images: ProjectCase["images"] }) {
-  const [mainImage, ...secondaryImages] = images;
-
-  if (!mainImage) {
-    return null;
-  }
-
-  return (
-    <section className="mb-12">
-      <h2 className="mb-4 text-2xl font-bold">Imagens do projeto</h2>
-
-      <div className="space-y-6">
-        <figure className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900">
-          <Image
-            src={mainImage.src}
-            alt={mainImage.alt}
-            width={1200}
-            height={675}
-            className="h-auto w-full object-cover"
-          />
-
-          <figcaption className="px-4 py-3 text-sm text-slate-400">
-            {mainImage.title}
-          </figcaption>
-        </figure>
-
-        {secondaryImages.length > 0 && (
-          <div className="grid gap-4 md:grid-cols-2">
-            {secondaryImages.map((image) => (
-              <figure
-                key={image.src}
-                className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900"
-              >
-                <Image
-                  src={image.src}
-                  alt={image.alt}
-                  width={900}
-                  height={506}
-                  className="h-auto w-full object-cover"
-                />
-
-                <figcaption className="px-4 py-3 text-sm text-slate-400">
-                  {image.title}
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        )}
-      </div>
-    </section>
-  );
-}
-
 function getLinkClassName(variant: ProjectCase["links"][number]["variant"]) {
   const baseClassName =
     "rounded-lg px-6 py-3 text-center font-semibold transition";
