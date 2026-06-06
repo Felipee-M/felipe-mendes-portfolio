@@ -178,6 +178,27 @@ export default function DashboardFinanceiroPage() {
         </section>
 
         <section className="mb-12">
+            <h2 className="mb-4 text-2xl font-bold">Vídeo demonstrativo</h2>
+
+            <p className="mb-6 leading-8 text-slate-300">
+                Demonstração prática do funcionamento da solução, incluindo navegação,
+                indicadores e principais recursos do projeto.
+            </p>
+
+            <div className="overflow-hidden rounded-2xl border border-slate-800">
+                <div className="aspect-video w-full">
+                <iframe
+                    className="h-full w-full"
+                    src="https://www.youtube.com/embed/cl6BwChjj24"
+                    title="Vídeo demonstrativo do projeto"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowFullScreen
+                />
+                </div>
+            </div>
+        </section>
+
+        <section className="mb-12">
           <h2 className="mb-4 text-2xl font-bold">Impacto</h2>
 
           <ul className="list-disc space-y-3 pl-6 leading-8 text-slate-300">
