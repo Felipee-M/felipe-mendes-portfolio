@@ -17,7 +17,7 @@ export function Projects() {
       <div className="grid gap-6 md:grid-cols-3">
         {featuredProjects.map((project) => (
           <article
-            key={project.slug}
+            key={project.caseUrl}
             className="rounded-2xl border border-slate-800 bg-slate-900 p-6"
           >
             <h3 className="mb-3 text-xl font-semibold">{project.title}</h3>
@@ -37,9 +37,9 @@ export function Projects() {
               ))}
             </div>
 
-            {project.status === "published" ? (
+            {project.status === "Concluído" ? (
               <Link
-                href={`/projetos/${project.slug}`}
+                href={`/projetos/${project.caseUrl}`}
                 className="text-sm font-semibold text-blue-400 hover:text-blue-300"
               >
                 Ver estudo de caso →

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+import { contactLinks } from "@/data/contactLinks";
 
 const featuredProjects = projects.filter((project) => project.featured);
 
@@ -57,30 +58,38 @@ export default function Home() {
             informações.
           </p>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
               href="#projetos"
-              className="rounded-lg bg-blue-500 px-6 py-3 text-center font-semibold text-white transition hover:bg-blue-600"
+              className="rounded-xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Ver projetos
             </a>
 
             <a
-              href="https://github.com/Felipee-M"
+              href={contactLinks.github}
               target="_blank"
-              rel="noreferrer"
-              className="rounded-lg border border-slate-700 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-500"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
             >
               Ver GitHub
             </a>
 
             <a
-              href="https://www.linkedin.com/in/felipemendessantos"
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-lg border border-slate-700 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-500"
+              href={contactLinks.resume}
+              download
+              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
             >
-              Entrar em contato
+              Baixar currículo
+            </a>
+
+            <a
+              href={contactLinks.whatsapp}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+            >
+              Falar no WhatsApp
             </a>
           </div>
         </div>
@@ -191,21 +200,47 @@ export default function Home() {
             oportunidades júnior, projetos práticos e conversas profissionais.
           </p>
 
-          <div className="flex flex-col gap-4 sm:flex-row">
+          <div className="mt-8 flex flex-wrap gap-3">
             <a
-              href="mailto:felipe.m.dos.santoss@gmail.com"
-              className="rounded-lg bg-blue-500 px-6 py-3 text-center font-semibold text-white transition hover:bg-blue-600"
+              href={contactLinks.email}
+              className="rounded-xl bg-slate-950 px-5 py-3 text-sm font-semibold text-white transition hover:bg-slate-800"
             >
               Enviar e-mail
             </a>
 
             <a
-              href="https://www.linkedin.com/in/felipemendessantos"
+              href={contactLinks.whatsapp}
               target="_blank"
-              rel="noreferrer"
-              className="rounded-lg border border-slate-700 px-6 py-3 text-center font-semibold text-slate-100 transition hover:border-slate-500"
+              rel="noopener noreferrer"
+              className="rounded-xl bg-emerald-600 px-5 py-3 text-sm font-semibold text-white transition hover:bg-emerald-700"
+            >
+              Falar no WhatsApp
+            </a>
+
+            <a
+              href={contactLinks.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
             >
               Ver LinkedIn
+            </a>
+
+            <a
+              href={contactLinks.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+            >
+              Ver GitHub
+            </a>
+
+            <a
+              href={contactLinks.resume}
+              download
+              className="rounded-xl border border-slate-300 px-5 py-3 text-sm font-semibold text-slate-700 transition hover:bg-slate-100"
+            >
+              Baixar currículo
             </a>
           </div>
         </div>
