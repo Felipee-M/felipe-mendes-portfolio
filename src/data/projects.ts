@@ -22,6 +22,26 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+  title: "Planilha de Controle Financeiro - Excel/VBA",
+  slug: "planilha-controle-financeiro",
+  category: "Excel • VBA • Produto Digital",
+  description:
+    "Solução de controle financeiro em Excel com automações em VBA, desenvolvida como produto digital publicado na Hotmart.",
+  problem:
+    "Muitas pessoas têm dificuldade em organizar receitas, despesas, contas fixas e acompanhamento financeiro mensal de forma simples e visual.",
+  solution:
+    "Criação de uma planilha automatizada em Excel com lançamento de receitas e despesas, categorização, indicadores financeiros e recursos em VBA para melhorar a usabilidade.",
+  impact:
+    "Transforma o controle financeiro pessoal em uma ferramenta prática, visual e automatizada, demonstrando aplicação real de Excel/VBA em uma solução comercial.",
+  tools: ["Excel", "VBA", "Dashboard", "Automação"],
+  githubUrl: "",
+  demoUrl: "controlefinanceirofacil.hotmart.host",
+  videoUrl: "",
+  image: "/images/projects/planilha-controle-financeiro.png",
+  status: "published",
+  featured: true,
+  },
+  {
     title: "Análise de E-commerce - SQL",
     slug: "ecommerce-sql",
     category: "SQL • PostgreSQL • Analytics",
