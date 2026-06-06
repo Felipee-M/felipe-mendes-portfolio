@@ -41,6 +41,25 @@ const lineChartPoints = lineChartData
   })
   .join(" ");
 
+  const toolGroups = [
+  {
+    category: "Business Intelligence",
+    tools: ["Power BI", "Dashboards", "Indicadores", "Visualização de Dados"],
+  },
+  {
+    category: "Análise de Dados",
+    tools: ["SQL", "PostgreSQL", "Python", "Pandas"],
+  },
+  {
+    category: "Produtividade e Automação",
+    tools: ["Excel", "Power Query", "VBA", "Google Sheets"],
+  },
+  {
+    category: "Versionamento e Portfólio",
+    tools: ["Git", "GitHub", "Next.js", "Vercel"],
+  },
+];
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-slate-100">
@@ -326,30 +345,69 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projetos" className="py-20">
-        <div className="mx-auto max-w-6xl px-6">
-          <div className="mb-10 max-w-2xl">
-            <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
-              Projetos
-            </span>
+     <section id="projetos" className="mx-auto max-w-6xl px-6 py-20">
+        <div className="mb-10 max-w-2xl">
+          <span className="text-sm font-semibold uppercase tracking-wide text-blue-400">
+            Projetos
+          </span>
 
-            <h2 className="mt-3 text-3xl font-bold text-slate-950">
-              Projetos em destaque
-            </h2>
+          <h2 className="mt-3 text-3xl font-bold text-white">
+            Projetos em destaque
+          </h2>
 
-            <p className="mt-4 text-slate-600">
-              Estudos de caso com foco em dados, BI, automação, SQL, Excel e análise
-              de indicadores.
-            </p>
-          </div>
+          <p className="mt-4 text-slate-300">
+            Estudos de caso com foco em dados, BI, automação, SQL, Excel e análise
+            de indicadores.
+          </p>
+        </div>
 
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {projects
-              .filter((project) => project.featured)
-              .map((project) => (
-                <ProjectCard key={project.id} project={project} />
-              ))}
-          </div>
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {projects
+            .filter((project) => project.featured)
+            .map((project) => (
+              <ProjectCard key={project.id} project={project} />
+            ))}
+        </div>
+      </section>
+
+      <section id="ferramentas" className="mx-auto max-w-6xl px-6 py-16">
+        <div className="mb-10 max-w-2xl">
+          <span className="text-sm font-semibold uppercase tracking-wide text-blue-400">
+            Ferramentas
+          </span>
+
+          <h2 className="mt-3 text-3xl font-bold text-white">
+            Ferramentas e tecnologias
+          </h2>
+
+          <p className="mt-4 text-slate-300">
+            Principais ferramentas que utilizo para análise, organização,
+            visualização de dados e construção de projetos.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+          {toolGroups.map((group) => (
+            <div
+              key={group.category}
+              className="rounded-2xl border border-slate-800 bg-slate-900 p-6"
+            >
+              <h3 className="mb-4 text-lg font-semibold text-white">
+                {group.category}
+              </h3>
+
+              <div className="flex flex-wrap gap-2">
+                {group.tools.map((tool) => (
+                  <span
+                    key={tool}
+                    className="rounded-full bg-slate-800 px-3 py-1 text-sm text-slate-300"
+                  >
+                    {tool}
+                  </span>
+                ))}
+              </div>
+            </div>
+          ))}
         </div>
       </section>
 
