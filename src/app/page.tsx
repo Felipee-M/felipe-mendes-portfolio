@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { projects } from "@/data/projects";
+import { ProjectCard } from "@/components/projects/ProjectCard";
 
 const featuredProjects = projects.filter((project) => project.featured);
 
@@ -154,102 +155,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="projetos" className="mx-auto max-w-6xl px-6 py-16">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <h2 className="text-3xl font-bold">Projetos em destaque</h2>
-            <p className="mt-2 text-slate-300">
-              Alguns projetos criados para demonstrar habilidades em Dados, BI e
-              Analytics.
+      <section id="projetos" className="py-20">
+        <div className="mx-auto max-w-6xl px-6">
+          <div className="mb-10 max-w-2xl">
+            <span className="text-sm font-semibold uppercase tracking-wide text-blue-600">
+              Projetos
+            </span>
+
+            <h2 className="mt-3 text-3xl font-bold text-slate-950">
+              Projetos em destaque
+            </h2>
+
+            <p className="mt-4 text-slate-600">
+              Estudos de caso com foco em dados, BI, automação, SQL, Excel e análise
+              de indicadores.
             </p>
           </div>
-        </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {featuredProjects.map((project) => (
-            <article
-              key={project.title}
-              className="rounded-2xl border border-slate-800 bg-slate-900 p-6"
-            >
-              <div className="mb-4 flex items-start justify-between gap-4">
-                <div>
-                  <p className="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-blue-400">
-                    {project.category}
-                  </p>
-
-                  <h3 className="text-xl font-semibold">{project.title}</h3>
-                </div>
-
-                <span className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300">
-                  {project.status === "published"
-                    ? "Publicado"
-                    : project.status === "in-progress"
-                      ? "Em andamento"
-                      : "Em breve"}
-                </span>
-              </div>
-
-              <p className="mb-5 text-sm leading-6 text-slate-300">
-                {project.description}
-              </p>
-
-              <div className="mb-5 space-y-3 text-sm leading-6 text-slate-300">
-                <p>
-                  <strong className="text-slate-100">Problema:</strong>{" "}
-                  {project.problem}
-                </p>
-
-                <p>
-                  <strong className="text-slate-100">Entrega:</strong>{" "}
-                  {project.solution}
-                </p>
-
-                <p>
-                  <strong className="text-slate-100">Impacto:</strong>{" "}
-                  {project.impact}
-                </p>
-              </div>
-
-              <div className="mb-6 flex flex-wrap gap-2">
-                {project.tools.map((tool) => (
-                  <span
-                    key={tool}
-                    className="rounded-full bg-slate-800 px-3 py-1 text-xs text-slate-300"
-                  >
-                    {tool}
-                  </span>
-                ))}
-              </div>
-
-              {project.status === "published" ? (
-                <Link
-                  href={`/projetos/${project.slug}`}
-                  className="text-sm font-semibold text-blue-400 hover:text-blue-300"
-                >
-                  Ver estudo de caso →
-                </Link>
-              ) : (
-                <span className="text-sm font-semibold text-slate-500">
-                  {project.status === "in-progress" ? "Projeto em andamento" : "Em breve"}
-                </span>
-              )}
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section id="ferramentas" className="mx-auto max-w-6xl px-6 py-16">
-        <h2 className="mb-8 text-3xl font-bold">Ferramentas</h2>
-
-        <div className="flex flex-wrap gap-3">
-          {tools.map((tool) => (
-            <span
-              key={tool}
-              className="rounded-full border border-slate-700 px-4 py-2 text-sm text-slate-300"
-            >
-              {tool}
-            </span>
-          ))}
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {projects
+              .filter((project) => project.featured)
+              .map((project) => (
+                <ProjectCard key={project.id} project={project} />
+              ))}
+          </div>
         </div>
       </section>
 
