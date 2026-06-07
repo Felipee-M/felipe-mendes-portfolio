@@ -37,6 +37,10 @@ export function ProjectCard({ project }: ProjectCardProps) {
           <p className="mt-2 text-sm leading-6 text-slate-600">
             {project.description}
           </p>
+
+          <p className="mt-3 rounded-lg bg-blue-50 px-3 py-2 text-sm font-medium leading-6 text-blue-700">
+            {project.impactShort}
+          </p>
         </div>
 
         <div className="flex flex-wrap gap-2">
