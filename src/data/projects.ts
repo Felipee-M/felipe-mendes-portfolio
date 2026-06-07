@@ -7,7 +7,7 @@ export type Project = {
   tools: string[];
   status: "Concluído" | "Em desenvolvimento" | "Planejado";
   image: string;
-  caseUrl: string;
+  caseUrl?: string;
   githubUrl?: string;
   demoUrl?: string;
   featured: boolean;
@@ -57,16 +57,16 @@ export const projects: Project[] = [
     featured: true,
   },
   {
-    id: "dashboard-comercial-powerbi",
-    title: "Dashboard Comercial em Power BI",
-    category: "Power BI / BI",
-    impactShort: "Em breve.",
-    description:
-      "Dashboard para acompanhamento de vendas, indicadores comerciais e desempenho por categoria.",
-    tools: ["Power BI", "DAX", "Power Query"],
-    status: "Em desenvolvimento",
-    image: "/images/projects/powerbi-comercial.png",
-    caseUrl: "/projects/dashboard-comercial-powerbi",
-    featured: false,
-  },
+  id: "dashboard-comercial-powerbi",
+  title: "Dashboard Comercial em Power BI",
+  category: "Power BI / BI",
+  description:
+    "Dashboard para acompanhamento de vendas, indicadores comerciais e desempenho por categoria.",
+  impactShort:
+    "Projeto em desenvolvimento para transformar dados comerciais em indicadores executivos.",
+  tools: ["Power BI", "DAX", "Power Query"],
+  status: "Em desenvolvimento",
+  image: "/images/projects/powerbi-comercial.png",
+  featured: false,
+  }
 ];
