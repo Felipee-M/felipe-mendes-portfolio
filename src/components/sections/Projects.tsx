@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { projects } from "@/data/projects";
 import { ProjectCard } from "@/components/projects/ProjectCard";
+
 
 export function Projects() {
   const featuredProjects = projects.filter((project) => project.featured);
@@ -25,6 +27,15 @@ export function Projects() {
         {featuredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
+      </div>
+
+      <div className="mt-10">
+        <Link
+          href="/projects"
+          className="inline-flex rounded-xl border border-slate-700 px-5 py-3 text-sm font-semibold text-slate-100 transition hover:border-slate-500 hover:bg-slate-900"
+        >
+          Ver todos os projetos
+        </Link>
       </div>
     </section>
   );

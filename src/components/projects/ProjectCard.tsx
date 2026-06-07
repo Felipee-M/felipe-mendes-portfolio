@@ -55,12 +55,18 @@ export function ProjectCard({ project }: ProjectCardProps) {
         </div>
 
         <div className="flex flex-wrap gap-3 pt-2">
-          <Link
-            href={project.caseUrl}
-            className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
-          >
-            Ver estudo de caso
-          </Link>
+          {project.caseUrl ? (
+            <Link
+              href={project.caseUrl}
+              className="rounded-lg bg-slate-950 px-4 py-2 text-sm font-medium text-white transition hover:bg-slate-800"
+            >
+              Ver estudo de caso
+            </Link>
+          ) : (
+            <span className="rounded-lg bg-slate-100 px-4 py-2 text-sm font-medium text-slate-500">
+              Estudo de caso em breve
+            </span>
+          )}
 
           {project.githubUrl && (
             <a
