@@ -231,7 +231,7 @@ export const ecommerceSqlCase: ProjectCase = {
   links: [
     {
       label: "Ver no GitHub",
-      href: "https://github.com/Felipee-M/data-analytics-portfolio",
+      href: "https://github.com/Felipee-M/data-analytics-lab",
       external: true,
       variant: "primary",
     },
