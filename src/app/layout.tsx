@@ -1,49 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  metadataBase: new URL("https://felipe-mendes-portfolio.vercel.app"),
-  title: {
-    default: "Felipe Mendes | Dados, BI e Analytics",
-    template: "%s | Felipe Mendes",
-  },
+  title: "Felipe Mendes | Dados, BI e Analytics",
   description:
-    "Portfólio profissional de Felipe Mendes com projetos de Dados, Business Intelligence, Power BI, SQL, Excel e Python.",
-  keywords: [
-    "Felipe Mendes",
-    "Analista de Dados",
-    "Business Intelligence",
-    "Power BI",
-    "SQL",
-    "Excel",
-    "Python",
-    "Portfólio de Dados",
-  ],
-  authors: [{ name: "Felipe Mendes" }],
-  creator: "Felipe Mendes",
+    "Portfólio profissional com projetos de Dados, BI, Power BI, SQL, Excel, Python e dashboards.",
   openGraph: {
     title: "Felipe Mendes | Dados, BI e Analytics",
     description:
-      "Portfólio profissional com projetos de Dados, BI, Power BI, SQL, Excel e Python.",
-    url: "/",
+      "Portfólio profissional com projetos de Dados, BI, Power BI, SQL, Excel, Python e dashboards.",
+    url: "https://felipe-mendes-portfolio.vercel.app",
     siteName: "Felipe Mendes Portfolio",
     locale: "pt_BR",
     type: "website",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Felipe Mendes | Portfólio de Dados, BI e Analytics",
+      },
+    ],
   },
-  robots: {
-    index: true,
-    follow: true,
+  twitter: {
+    card: "summary_large_image",
+    title: "Felipe Mendes | Dados, BI e Analytics",
+    description:
+      "Projetos de Dados, BI, Power BI, SQL, Excel, Python e dashboards.",
+    images: ["/og-image.png"],
   },
 };
 
@@ -53,11 +37,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="pt-BR"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">{children}</body>
+    <html lang="pt-BR">
+      <body>{children}</body>
     </html>
   );
 }
